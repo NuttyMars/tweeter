@@ -1,6 +1,6 @@
 
 const createTweetElement = function(tweetObj) {
-  const tweetElement = $('<article class="tweet">')
+  const $tweetElement = $('<article class="tweet">')
   const header = $('<header class="tweet-header">')
   const avatar = $('<img>', {
     class: "avatar",
@@ -16,11 +16,18 @@ const createTweetElement = function(tweetObj) {
   header.append(avatar);
   header.append(username);
   header.append(handle);
-  tweetElement.append(header);
+  $tweetElement.append(header);
   contentHolder.append(content);
-  tweetElement.append(contentHolder);
-  tweetElement.append(footer);
+  $tweetElement.append(contentHolder);
+  $tweetElement.append(footer);
 
-  return tweetElement;
+  return $tweetElement;
+}
+
+const renderTweets = function(tweetsArray) {
+  for (const tweetObj of tweetsArray) {
+    const $tweet = createTweetElement(tweetObj);
+    $('#tweet-container').append($tweet);
+  }
 }
 
