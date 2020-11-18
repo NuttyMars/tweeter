@@ -25,6 +25,7 @@ body {
  */
 
 body {
+  position: relative;
   font-family: 'Bungee', cursive;
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
@@ -82,4 +83,8 @@ article.tweet div {
 article.tweet footer {
   font-size: 20px;
   padding: .8em 0 .8em 1.2em;
+}
+
+article.tweet .handle {
+  opacity: 0;
 }
