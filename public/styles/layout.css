@@ -44,9 +44,8 @@ main {
   justify-content: center;
 }
 
-article {
-  margin-bottom: 1em;
-  margin-top: 1em;
+article.tweet {
+  margin: 1em 0 1em 0;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -54,16 +53,21 @@ article {
   border: 3px solid #545149;
 }
 
-article footer {
-  margin: 0 auto;
-  width: 97%;
-  padding: .5em;
-}
-
-article footer {
-  font-weight: lighter;
+article.tweet header {
+  padding: 0 .5em 0 .5em;
   display: flex;
   align-content: center;
   justify-content: space-between;
+}
+
+article.tweet img {
+  align-self: center;
+  margin-right: .5em;
+}
+
+article.tweet .handle {
+  flex-grow: 2;
+  display: flex;
+  justify-content: flex-end;
 }
 

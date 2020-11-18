@@ -1,9 +1,8 @@
-header {
+body > header {
   height: 400px;
   width: 100vw;
   background-color: goldenrod;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
-
   display: flex;
   justify-content: center;
   align-items: center;
