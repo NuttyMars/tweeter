@@ -23,3 +23,78 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+body {
+  font-family: 'Bungee', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+main {
+  margin: 0 auto;
+  width: 90vw;
+  color: #545149;
+  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+article {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  border: 3px solid #545149;
+}
+
+article footer {
+  margin: 0 auto;
+  width: 97%;
+  padding: .5em;
+}
+
+.tweet-content {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 3px solid #545149;
+  width: 97%;
+  font-weight: 600;
+}
+
+/* .tweet-content .user {
+  
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+} */
+
+.tweet-content img {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #545149;
+  align-self: center;
+}
+
+.user {
+  font-weight: lighter;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.user p:first-child {
+  align-self: flex-start;
+}
+
+.user p:last-child {
+  align-self: flex-end;
+}
+
