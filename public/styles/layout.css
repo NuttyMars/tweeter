@@ -60,41 +60,10 @@ article footer {
   padding: .5em;
 }
 
-.tweet-content {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  border-bottom: 3px solid #545149;
-  width: 97%;
-  font-weight: 600;
-}
-
-/* .tweet-content .user {
-  
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-} */
-
-.tweet-content img {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #545149;
-  align-self: center;
-}
-
-.user {
+article footer {
   font-weight: lighter;
   display: flex;
   align-content: center;
   justify-content: space-between;
-}
-
-.user p:first-child {
-  align-self: flex-start;
-}
-
-.user p:last-child {
-  align-self: flex-end;
 }
 
