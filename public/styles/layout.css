@@ -18,20 +18,17 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Bungee', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-body {
-  position: relative;
-  font-family: 'Bungee', cursive;
-  font-family: 'Source Sans Pro', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
+/* A hack for glitchy header after setting nav to fixed position */
+body * {
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 
 main {
@@ -43,48 +40,4 @@ main {
   flex-direction: column;
   align-content: center;
   justify-content: center;
-}
-
-article.tweet {
-  margin: 1em 0 1em 0;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  border: 3px solid #545149;
-}
-
-article.tweet header {
-  padding: 0 .6em 0 .6em;
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
-}
-
-article.tweet img {
-  align-self: center;
-  margin-right: .5em;
-}
-
-article.tweet .handle {
-  flex-grow: 2;
-  display: flex;
-  justify-content: flex-end;
-}
-
-article.tweet div {
-  padding: 0 .5em 0 .5em;
-  font-weight: 700;
-  border-bottom: 3px solid #545149;
-  width: 98%;
-  align-self: center;
-}
-
-article.tweet footer {
-  font-size: 20px;
-  padding: .8em 0 .8em 1.2em;
-}
-
-article.tweet .handle {
-  opacity: 0;
 }

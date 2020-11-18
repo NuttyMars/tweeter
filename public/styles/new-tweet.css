@@ -8,7 +8,7 @@ section {
   color: #545149;
 }
 
-section h2 {
+section > h2 {
   margin: 0 auto;
   width: 87vw;
   margin-top: .5em;
@@ -39,7 +39,7 @@ textarea {
   border-color: #545149;
   width: 100%;
 }
-form div {
+form > footer {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;

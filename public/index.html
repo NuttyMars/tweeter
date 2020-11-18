@@ -1,121 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- Fonts embedded from Google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <!-- Fonts embedded from Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+    rel="stylesheet">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- Tweet character counter -->
-    <script src="/scripts/composer-char-counter.js"></script>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
 
-    <!-- Tweet shadow -->
-    <script src="/scripts/tweet-shadow.js"></script>
-  </head>
+  <!-- Tweet character counter -->
+  <script src="/scripts/composer-char-counter.js"></script>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-      <div>
-        <p>Add a new tweet</p>
-        <p>&#x21A1</p>
-      </div>
-    </nav>
+</head>
 
-    <!-- 'Hard coded' profile header -->
-    <header>
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Nati Mars</h2>
-      </div>
-    </header>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span>tweeter</span>
+    <div>
+      <p>Add a new tweet</p>
+      <p>&#x21A1</p>
+    </div>
+  </nav>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
+  <!-- 'Hard coded' profile header -->
+  <header>
+    <div>
+      <img src="/images/profile-hex.png">
+    </div>
+    <br>
+    <div>
+      <h2>Nati Mars</h2>
+    </div>
+  </header>
+
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form action="/tweets/" method="POST">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <footer>
+          <button type="submit">Tweet</button>
+          <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
+        </footer>
+      </form>
+    </section>
+    <section id="tweet-container">
       <article class="tweet">
-        <header>
-          <img src="https://racemph.com/wp-content/uploads/2016/09/profile-image-placeholder-300x300.png" width="50" height="50">
-          <p>Some longer name</p>
+        <header class="tweet-header">
+          <img class="avatar" src="https://racemph.com/wp-content/uploads/2016/09/profile-image-placeholder-300x300.png"
+            width="50" height="50">
+          <p class="user-name">Some longer name</p>
           <p class="handle">@Handle</p>
         </header>
-        <div>
-          <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
-        </div>
-        <footer>some days ago</footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <img src="https://racemph.com/wp-content/uploads/2016/09/profile-image-placeholder-300x300.png" width="50" height="50">
-          <p>Some longer name</p>
-          <p class="handle">@Handle</p>
-        </header>
-        <div>
-          <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
-        </div>
-        <footer>some days ago</footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <img src="https://racemph.com/wp-content/uploads/2016/09/profile-image-placeholder-300x300.png" width="50" height="50">
-          <p>Some longer name</p>
-          <p class="handle">@Handle</p>
-        </header>
-        <div>
-          <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
-        </div>
-        <footer>some days ago</footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <img src="https://racemph.com/wp-content/uploads/2016/09/profile-image-placeholder-300x300.png" width="50" height="50">
-          <p>Some longer name</p>
-          <p class="handle">@Handle</p>
-        </header>
-        <div>
-          <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
-        </div>
-        <footer>some days ago</footer>
-      </article>
-    </main>
-  </body>
-</html>
-
         <div class="tweet-content">
-          <div class="user">
-
-          </div>
-
+          <p>Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
         </div>
-        <h5></h5>
+        <footer class="tweet-footer">some days ago</footer>
+      </article>
+    </section>
+  </main>
+</body>
+
+</html>

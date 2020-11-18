@@ -1,6 +1,7 @@
 nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   height: 120px;
   width: 100vw;
   background-color: #4056A1;
@@ -10,9 +11,9 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-span {
+nav > span {
   font-family: 'Bungee';
 }
-div {
+nav > div {
   display: flex;
 }
