@@ -5,15 +5,7 @@
  */
 
 $(document).ready(() => {
-  const createTweetElement = function(tweetObj) {
-    const $tweet = $(`<article class="tweet"><header><img src="${tweetObj.user.avatars}"><p>${tweetObj.user.name}</p><p class="handle">${tweetObj.user.handle}</p></header><div>
-    <p>${tweetObj.content.text}</p></div><footer>${tweetObj.created_at}</footer></article>`);
-    return $tweet;
-  }
 
-
-
-  // Test / driver code (temporary). Eventually will get this from the server.
   const tweetData = {
     "user": {
       "name": "Newton",
@@ -26,14 +18,8 @@ $(document).ready(() => {
     "created_at": 1461116232227
   }
   
-  const $tweet = createTweetElement(tweetData);
-  
-  // Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
+  const tweet = createTweetElement(tweetData);
+  console.log(tweet);
 
-  console.log($tweet.children[0]);
-  console.log($tweet.children[1]);
-  console.log($tweet.children[2]);
-
-  $('container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  $('tweet-container').append(tweet);
 })
