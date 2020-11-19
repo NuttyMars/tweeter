@@ -11,15 +11,12 @@ $(document).ready(() => {
   $('form').submit((event) => {
     event.preventDefault();
 
-    submitTweet();
+    const tweetCounter = $('#counter').val();
 
-    $( '#newsletterform' ).each(function(){
-      this.reset();
-    });
-
-    
-
-    // loadTweets();
+    if(validateTweetLength(tweetCounter)) {
+      submitTweet();
+      $('textarea').val('');
+      $('#counter').val('140');
+    }
   })
-  
 })

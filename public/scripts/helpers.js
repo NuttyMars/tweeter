@@ -34,7 +34,7 @@ const renderTweets = function(tweetsArray) {
 const loadTweets = function() {
   console.log('1st AJAX call, loading existing tweets')
   $('#tweet-container').empty()
-  
+
   $
   .ajax('/tweets', {method: 'GET'})
   .then(res => renderTweets(res))
@@ -54,4 +54,16 @@ const submitTweet = function() {
   .then(res => loadTweets(res))
   .catch(err => console.log(err))
   .always(() => console.log('AJAX POST successful'))
+}
+
+const validateTweetLength = function(counter) {
+  if(counter === '140') {
+    alert('Tweet cannot be empty!');
+    return false;
+  }
+  if (counter < 0) {
+    alert('Tweet cannot be over 140 characters long');
+    return false;
+  }
+  return true;
 }
