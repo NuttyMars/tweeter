@@ -56,14 +56,24 @@ const submitTweet = function() {
   .always(() => console.log('AJAX POST successful'))
 }
 
+const alert = function(message) {
+  $('.error').slideDown('slow', function() {
+    $(this)
+      .text(`${message}`)
+      .css('visibility', 'visible')
+  });
+}
+
 const validateTweetLength = function(counter) {
   if(counter === '140') {
-    alert('Tweet cannot be empty!');
-    return false;
+    const message = 'Tweet cannot be empty!';
+    return alert(message);
   }
+
   if (counter < 0) {
-    alert('Tweet cannot be over 140 characters long');
-    return false;
+    const message = 'Tweet cannot be over 140 characters long!';
+    return alert(message);
   }
+  $('.error').css('visibility', 'hidden')
   return true;
 }

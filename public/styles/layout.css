@@ -41,3 +41,18 @@ main {
   align-content: center;
   justify-content: center;
 }
+
+.error {
+  visibility: hidden;
+  font-weight: bold;
+  color: #D8000C;
+  border: 3px solid red;
+  background-image: url('https://i.imgur.com/GnyDvKN.png');
+  background-repeat: no-repeat;
+  padding-left: 1.5em;
+  padding-bottom: 1.4em;
+  margin-bottom: .3em;
+  height: 1.5em;
+  display: flex;
+  align-content: center;
+}
