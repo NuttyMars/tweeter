@@ -1,6 +1,6 @@
 section {
   margin: 0 auto;
-  width: 90vw;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -9,15 +9,16 @@ section {
 }
 
 section > h2 {
+  visibility: collapse;
   margin: 0 auto;
-  width: 87vw;
+  width: 87%;
   margin-top: .5em;
   margin-bottom: .5em;
 }
 
 form {
   margin: 0 auto;
-  width: 87vw;
+  width: 87%;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -28,21 +29,39 @@ label {
   margin: 0;
   padding: 0;
 }
+
 textarea {
   color: #545149;
   background: transparent;
-  outline: 0;
+  outline: transparent;
   resize: none;
   height: 1.5em;
-  border-width: 0 0 3px;
-  border-color: #545149;
+  border: 0px;
+  border-bottom: 3px solid #545149;
   width: 100%;
 }
+
+.error {
+  visibility: hidden;
+  font-weight: bold;
+  color: #D8000C;
+  border: 3px solid red;
+  background-image: url('https://i.imgur.com/GnyDvKN.png');
+  background-repeat: no-repeat;
+  padding-left: 1.5em;
+  padding-bottom: 1.4em;
+  margin-bottom: .3em;
+  height: 1.5em;
+  display: flex;
+  align-content: center;
+}
+
 form > footer {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
 }
+
 button {
   background-color: #4056A1;
   color: white;

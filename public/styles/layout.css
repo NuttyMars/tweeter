@@ -27,9 +27,9 @@ body {
  */
 
 /* A hack for glitchy header after setting nav to fixed position */
-body * {
+/* body * {
   border: 1px solid rgba(255, 255, 255, 0);
-}
+} */
 
 main {
   margin: 0 auto;
@@ -42,17 +42,29 @@ main {
   justify-content: center;
 }
 
-.error {
-  visibility: hidden;
-  font-weight: bold;
-  color: #D8000C;
-  border: 3px solid red;
-  background-image: url('https://i.imgur.com/GnyDvKN.png');
-  background-repeat: no-repeat;
-  padding-left: 1.5em;
-  padding-bottom: 1.4em;
-  margin-bottom: .3em;
-  height: 1.5em;
-  display: flex;
-  align-content: center;
+/* Tablet view */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  nav {
+    background-color: goldenrod;
+    background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  }
+}
+
+/* Desktop view */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  body > header {
+    margin-top: 8em;
+    margin-left: 2em;
+    flex-basis: content;
+    flex-shrink: 2;
+  }
+  main {
+    margin-top: 120px;
+    /* flex-shrink: 1; */
+  }
+
 }
