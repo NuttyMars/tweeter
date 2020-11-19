@@ -27,7 +27,31 @@ const createTweetElement = function(tweetObj) {
 const renderTweets = function(tweetsArray) {
   for (const tweetObj of tweetsArray) {
     const $tweet = createTweetElement(tweetObj);
-    $('#tweet-container').append($tweet);
+    $('#tweet-container').prepend($tweet);
   }
 }
 
+const loadTweets = function() {
+  console.log('1st AJAX call, loading existing tweets')
+  $('#tweet-container').empty()
+  
+  $
+  .ajax('/tweets', {method: 'GET'})
+  .then(res => renderTweets(res))
+  .catch(err => console.log(err))
+  .always(() => console.log('1st Ajax call successful'))
+}
+
+const submitTweet = function() {
+  console.log('AJAX POST call')
+
+  $
+  .ajax({
+    url:'/tweets',
+    method: 'POST',
+    data: $('form').serialize()
+  })
+  .then(res => loadTweets(res))
+  .catch(err => console.log(err))
+  .always(() => console.log('AJAX POST successful'))
+}
