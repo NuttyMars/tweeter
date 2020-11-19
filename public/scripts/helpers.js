@@ -1,5 +1,8 @@
 
 const createTweetElement = function(tweetObj) {
+  const dateCreated = new Date(tweetObj.created_at);
+  const currentDate = new Date();
+  const timePassed = currentDate - dateCreated
   const $tweetElement = $('<article class="tweet">')
   const header = $('<header class="tweet-header">')
   const avatar = $('<img>', {
@@ -11,7 +14,7 @@ const createTweetElement = function(tweetObj) {
   const handle = $('<p class="handle">').text(tweetObj.user.handle)
   const contentHolder = $('<div class="tweet-content">')
   const content = $('<p>').text(`${tweetObj.content.text}`)
-  const footer = $('<footer class="tweet-footer">').text(`${tweetObj.created_at}`)
+  const footer = $('<footer class="tweet-footer">').text(`${(timePassed)}`)
     
   header.append(avatar);
   header.append(username);
