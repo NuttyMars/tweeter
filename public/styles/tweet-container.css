@@ -57,4 +57,23 @@
 .tweet-footer {
   font-size: 20px;
   padding: .8em 0 .8em 1.2em;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.icons {
+  padding: 0 auto;
+  height: fit-content;
+  width: 5em;
+  align-self: center;
+  margin-right: 1em;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.icons:hover {
+  color: #4056A1;
+  text-shadow: 1px 1px 3px #162864;
 }

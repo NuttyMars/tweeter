@@ -51,15 +51,25 @@ const createTweetElement = function(tweetObj) {
   const handle = $('<p class="handle">').text(tweetObj.user.handle)
   const contentHolder = $('<div class="tweet-content">')
   const content = $('<p>').text(`${tweetObj.content.text}`)
-  const timePassed = getTimeDistanceFromNow(tweetObj);
-  const footer = $('<footer class="tweet-footer">').text(`${(timePassed)}`)
-    
+  const timePassed = getTimeDistanceFromNow(tweetObj)
+  const footer = $('<footer class="tweet-footer">')
+  const footerText = $('<p>').text(`${(timePassed)}`)
+  const iconHolder = $('<div class="icons">')
+  const flagIcon = $('<i class="far fa-flag">')
+  const retweetIcon = $('<i class="fas fa-retweet">')
+  const likeIcone = $('<i class="far fa-heart">')
+
   header.append(avatar);
   header.append(username);
   header.append(handle);
   $tweetElement.append(header);
   contentHolder.append(content);
   $tweetElement.append(contentHolder);
+  footer.append(footerText);
+  iconHolder.append(flagIcon);
+  iconHolder.append(retweetIcon);
+  iconHolder.append(likeIcone);
+  footer.append(iconHolder);
   $tweetElement.append(footer);
 
   return $tweetElement;

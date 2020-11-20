@@ -6,8 +6,10 @@
 
 $(document).ready(() => {
 
+  //loads existing tweets(if any)
   loadTweets();
 
+  //handles form submission
   $('form').submit((event) => {
     event.preventDefault();
 
