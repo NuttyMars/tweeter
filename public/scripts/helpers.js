@@ -108,8 +108,8 @@ const submitTweet = function() {
 }
 
 const alert = function(message) {
-  $('.error').slideDown('slow', function() {
-    $(this)
+  $('.error').slideDown('slow', 'swing', function() {
+    $('.error')
       .text(`${message}`)
       .css('visibility', 'visible')
   });

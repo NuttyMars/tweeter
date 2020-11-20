@@ -4,7 +4,8 @@ nav {
   left: 0;
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: goldenrod;
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
   color: white;
   padding: 1.5em;
   display: flex;

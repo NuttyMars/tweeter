@@ -59,6 +59,10 @@ main {
     justify-content: space-evenly;
   }
 
+  body > nav {
+    background-color: #4056A1;
+  }
+
   body > header {
     margin-top: 8em;
     margin-left: 2em;
