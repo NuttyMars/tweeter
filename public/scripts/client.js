@@ -15,12 +15,12 @@ $(document).ready(() => {
 
     const tweetCounter = $('#counter').val();
 
-    if(validateTweetLength(tweetCounter)) {
+    if (validateTweetLength(tweetCounter)) {
       submitTweet();
       $('textarea').val('');
       $('#counter').val('140');
     }
-  })
+  });
 
   //scrolls to top when 'Write new tweet' button is pressed
   $('#compose-button').click(() => {
@@ -28,5 +28,5 @@ $(document).ready(() => {
     $('html, body').animate({
       scrollTop: $("header").position().top
     }, 1000);
-  })
-})
+  });
+});

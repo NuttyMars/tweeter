@@ -26,11 +26,6 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-/* A hack for glitchy header after setting nav to fixed position */
-/* body * {
-  border: 1px solid rgba(255, 255, 255, 0);
-} */
-
 main {
   margin: 0 auto;
   width: 90%;
@@ -40,6 +35,24 @@ main {
   flex-direction: column;
   align-content: center;
   justify-content: center;
+}
+
+/* Small screens */ 
+/* needs more work! */
+@media only screen and (max-width: 500px) {
+  nav {
+    height: fit-content;
+    flex-direction: column;
+  }
+  header {
+    visibility: hidden;
+  }
+  header > .profile-pic {
+    visibility: hidden;
+  }
+  main {
+    margin-top: auto;
+  }
 }
 
 /* Tablet view */
@@ -80,5 +93,4 @@ main {
   #tweet-container {
     margin-top: 1em;
   }
-
 }

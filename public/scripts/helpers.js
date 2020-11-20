@@ -10,9 +10,9 @@ const getTimeDistanceFromNow = function(tweetObj) {
   //will check if year, month, day, hours and minutes are equal
   if (dateCreated.getFullYear() === currentDate.getFullYear()) {
     if (months[dateCreated.getMonth()] === months[currentDate.getMonth()]) {
-      if(dateCreated.getDate() === currentDate.getDate()) {
-        if(dateCreated.getHours() === currentDate.getHours()) {
-          if(dateCreated.getMinutes() === currentDate.getMinutes()) {
+      if (dateCreated.getDate() === currentDate.getDate()) {
+        if (dateCreated.getHours() === currentDate.getHours()) {
+          if (dateCreated.getMinutes() === currentDate.getMinutes()) {
             output = `A few seconds ago`;
 
             //if they are not equal, will print message with difference
@@ -32,32 +32,33 @@ const getTimeDistanceFromNow = function(tweetObj) {
     output = `${currentDate.getFullYear() - dateCreated.getFullYear()} years ago`;
   }
 
+  console.log('output :', output);
   return output;
-}
+};
 
 //generates tweet content dinamically with jQuery
 //takes in object from database and outputs HTML
 const createTweetElement = function(tweetObj) {
 
   //all other tags will be appended to this one
-  const $tweetElement = $('<article class="tweet">')
-  const header = $('<header class="tweet-header">')
+  const $tweetElement = $('<article class="tweet">');
+  const header = $('<header class="tweet-header">');
   const avatar = $('<img>', {
     class: "avatar",
     src: `${tweetObj.user.avatars}`,
     alt: "avatar"
-  })
-  const username = $('<p class="user-name">').text(tweetObj.user.name)
-  const handle = $('<p class="handle">').text(tweetObj.user.handle)
-  const contentHolder = $('<div class="tweet-content">')
-  const content = $('<p>').text(`${tweetObj.content.text}`)
-  const timePassed = getTimeDistanceFromNow(tweetObj)
-  const footer = $('<footer class="tweet-footer">')
-  const footerText = $('<p>').text(`${(timePassed)}`)
-  const iconHolder = $('<div class="icons">')
-  const flagIcon = $('<i class="far fa-flag">')
-  const retweetIcon = $('<i class="fas fa-retweet">')
-  const likeIcone = $('<i class="far fa-heart">')
+  });
+  const username = $('<p class="user-name">').text(tweetObj.user.name);
+  const handle = $('<p class="handle">').text(tweetObj.user.handle);
+  const contentHolder = $('<div class="tweet-content">');
+  const content = $('<p>').text(`${tweetObj.content.text}`);
+  const timePassed = getTimeDistanceFromNow(tweetObj);
+  const footer = $('<footer class="tweet-footer">');
+  const footerText = $('<p>').text(`${(timePassed)}`);
+  const iconHolder = $('<div class="icons">');
+  const flagIcon = $('<i class="far fa-flag">');
+  const retweetIcon = $('<i class="fas fa-retweet">');
+  const likeIcone = $('<i class="far fa-heart">');
 
   header.append(avatar);
   header.append(username);
@@ -73,50 +74,50 @@ const createTweetElement = function(tweetObj) {
   $tweetElement.append(footer);
 
   return $tweetElement;
-}
+};
 
 const renderTweets = function(tweetsArray) {
   for (const tweetObj of tweetsArray) {
     const $tweet = createTweetElement(tweetObj);
     $('#tweet-container').prepend($tweet);
   }
-}
+};
 
 const loadTweets = function() {
-  console.log('1st AJAX call, loading existing tweets')
-  $('#tweet-container').empty()
+  console.log('1st AJAX call, loading existing tweets');
+  $('#tweet-container').empty();
 
   $
-  .ajax('/tweets', {method: 'GET'})
-  .then(res => renderTweets(res))
-  .catch(err => console.log(err))
-  .always(() => console.log('1st Ajax call successful'))
-}
+    .ajax('/tweets', {method: 'GET'})
+    .then(res => renderTweets(res))
+    .catch(err => console.log(err))
+    .always(() => console.log('1st Ajax call successful'));
+};
 
 const submitTweet = function() {
-  console.log('AJAX POST call')
+  console.log('AJAX POST call');
 
   $
-  .ajax({
-    url:'/tweets',
-    method: 'POST',
-    data: $('form').serialize()
-  })
-  .then(res => loadTweets(res))
-  .catch(err => console.log(err))
-  .always(() => console.log('AJAX POST successful'))
-}
+    .ajax({
+      url:'/tweets',
+      method: 'POST',
+      data: $('form').serialize()
+    })
+    .then(res => loadTweets(res))
+    .catch(err => console.log(err))
+    .always(() => console.log('AJAX POST successful'));
+};
 
 const alert = function(message) {
   $('.error').slideDown('slow', 'swing', function() {
     $('.error')
       .text(`${message}`)
-      .css('visibility', 'visible')
+      .css('visibility', 'visible');
   });
-}
+};
 
 const validateTweetLength = function(counter) {
-  if(counter === '140') {
+  if (counter === '140') {
     const message = 'Tweet cannot be empty!';
     return alert(message);
   }
@@ -125,6 +126,6 @@ const validateTweetLength = function(counter) {
     const message = 'Tweet cannot be over 140 characters long!';
     return alert(message);
   }
-  $('.error').css('visibility', 'hidden')
+  $('.error').css('visibility', 'hidden');
   return true;
-}
+};
