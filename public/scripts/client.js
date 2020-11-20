@@ -19,4 +19,12 @@ $(document).ready(() => {
       $('#counter').val('140');
     }
   })
+
+  //scrolls to top when 'Write new tweet' button is pressed
+  $('#compose-button').click(() => {
+
+    $('html, body').animate({
+      scrollTop: $("header").position().top
+    }, 1000);
+  })
 })

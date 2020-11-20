@@ -23,3 +23,7 @@ nav > div {
 nav > div span {
   font-weight: 700;
 }
+
+#compose-button:hover {
+  text-shadow: 4px 4px 6px #000000;
+}
