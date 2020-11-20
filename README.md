@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-Staret code cloned from Lighthouse Labs repo. Developed further using HTML, CSS, JS, jQuery and AJAX.
+Starter code cloned from Lighthouse Labs repo. Developed further using HTML, CSS, JS, jQuery and AJAX.
 
 ## Getting Started
 
