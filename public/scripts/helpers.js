@@ -1,8 +1,45 @@
-
-const createTweetElement = function(tweetObj) {
+//calculates difference between time created and current date in years, days and minutes
+const getTimeDistanceFromNow = function(tweetObj) {
   const dateCreated = new Date(tweetObj.created_at);
   const currentDate = new Date();
-  const timePassed = currentDate - dateCreated
+  let output = '';
+
+  //helps extract month from date
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  //will check if year, month, day, hours and minutes are equal
+  if (dateCreated.getFullYear() === currentDate.getFullYear()) {
+    if (months[dateCreated.getMonth()] === months[currentDate.getMonth()]) {
+      if(dateCreated.getDate() === currentDate.getDate()) {
+        if(dateCreated.getHours() === currentDate.getHours()) {
+          if(dateCreated.getMinutes() === currentDate.getMinutes()) {
+            output = `A few seconds ago`;
+
+            //if they are not equal, will print message with difference
+          } else {
+            output = `${currentDate.getMinutes() - dateCreated.getMinutes()} minutes ago`;
+          }
+        } else {
+          output = `${currentDate.getHours() - dateCreated.getHours()} hours ago`;
+        }
+      } else {
+        output = `${months[currentDate.getMonth()] - months[dateCreated.getMonth()]} days ago`;
+      }
+    } else {
+      output = `A while ago`;
+    }
+  } else {
+    output = `${currentDate.getFullYear() - dateCreated.getFullYear()} years ago`;
+  }
+
+  return output;
+}
+
+//generates tweet content dinamically with jQuery
+//takes in object from database and outputs HTML
+const createTweetElement = function(tweetObj) {
+
+  //all other tags will be appended to this one
   const $tweetElement = $('<article class="tweet">')
   const header = $('<header class="tweet-header">')
   const avatar = $('<img>', {
@@ -14,6 +51,7 @@ const createTweetElement = function(tweetObj) {
   const handle = $('<p class="handle">').text(tweetObj.user.handle)
   const contentHolder = $('<div class="tweet-content">')
   const content = $('<p>').text(`${tweetObj.content.text}`)
+  const timePassed = getTimeDistanceFromNow(tweetObj);
   const footer = $('<footer class="tweet-footer">').text(`${(timePassed)}`)
     
   header.append(avatar);

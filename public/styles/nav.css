@@ -13,7 +13,13 @@ nav {
 }
 nav > span {
   font-family: 'Bungee';
+  font-size: 1.5em;
 }
 nav > div {
+  font-size: 1.2em;
   display: flex;
+}
+
+nav > div span {
+  font-weight: 700;
 }

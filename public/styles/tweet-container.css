@@ -1,5 +1,16 @@
+#tweet-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
 .tweet {
-  margin: 1em 0 1em 0;
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-content: center;
